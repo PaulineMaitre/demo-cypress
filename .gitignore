@@ -4,4 +4,4 @@ api/__pycache__/
 api/domain/__pycache__/
 api/usecases/__pycache__/
 api/utils/__pycache__/
-/bookshop-webapp/node_modules/
+bookshop-webapp/node_modules/
