@@ -47,3 +47,11 @@ export async function get(
 ): Promise<any | Error> {
     return send(endpoint, "GET", null, config);
 }
+
+export async function post(
+    endpoint: string,
+    body: any,
+    config?: any
+): Promise<any | Error> {
+    return send(endpoint, "POST", body, config);
+}

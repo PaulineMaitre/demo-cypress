@@ -18,3 +18,15 @@ def get_all_books():
 @app.route('/books/<book_id>', methods=['GET'])
 def get_book(book_id):
     return find_by_id(book_id)
+
+@app.route('/books', methods=['POST'])
+def create_book(book):
+    return create(book)
+
+@app.route('/books/<book_id>', methods=['PUT'])
+def update_book(book_id, book):
+    return update(book_id, book)
+
+@app.route('/books/<book_id>', methods=['DELETE'])
+def delete_book(book_id):
+    return delete(book_id)

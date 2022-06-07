@@ -7,18 +7,20 @@ import {Books} from "./Books";
 
 export const Dashboard: React.FC = () => {
 
+    const [allBooks, setAllBooks] = useState<Book[]>([])
     const [books, setBooks] = useState<Book[]>([])
 
     useEffect(() => {
         getAllBooks().then((res: Book[] | Error) => {
             if (!(res instanceof Error)) {
+                setAllBooks(res);
                 setBooks(res);
             }
         })
     }, [])
 
     const search = (query: string): void => {
-        const filteredBooks = books.filter((r) => r.name.toLowerCase().includes(query.toLowerCase()));
+        const filteredBooks = allBooks.filter((b) => b.name.toLowerCase().includes(query.toLowerCase()) || b.author.toLowerCase().includes(query.toLowerCase()));
         setBooks(filteredBooks);
     };
 

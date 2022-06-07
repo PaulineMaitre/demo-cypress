@@ -1,5 +1,5 @@
 import {Book} from "../domain/Book";
-import {get} from "./ApiClient";
+import {get, post, send} from "./ApiClient";
 
 export async function getAllBooks(): Promise<Book[] | Error> {
     return get(`/books`);
@@ -7,4 +7,16 @@ export async function getAllBooks(): Promise<Book[] | Error> {
 
 export async function getBook(id: string): Promise<Book | Error> {
     return get(`/books/${id}`);
+}
+
+export async function createBook(book: Book): Promise<any | Error> {
+    return post(`/books`, book);
+}
+
+export async function updateBook(book: Book): Promise<any | Error> {
+    return send(`/books/${book.id}`, "PUT", book);
+}
+
+export async function deleteBook(id: string): Promise<any | Error> {
+    return send(`/books/delete/${id}`, "DELETE");
 }

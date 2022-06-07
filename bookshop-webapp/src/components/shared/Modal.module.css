@@ -1,0 +1,46 @@
+.header {
+  position: relative;
+  background-color: var(--dark-blue);
+  border-radius: 12px 12px 0 0;
+  color: white;
+}
+
+.title {
+  margin-bottom: unset;
+  margin-top: unset;
+  color: white;
+  font-weight: 550;
+  text-align: center;
+}
+
+.container {
+  padding: unset;
+  margin: 0.4rem;
+  border-radius: 12px;
+  height: 80vh;
+}
+
+.unsetHeight {
+  height: unset;
+}
+
+.closeBtn::before {
+  content: "\2715";
+}
+
+.closeBtn {
+  position: absolute;
+  right: 25px;
+  top: 19px;
+  color: white;
+  height: 24px;
+  width: 24px;
+  border-radius: 20px;
+}
+
+.closeBtn:focus,
+.closeBtn:hover {
+  background-color: #e4e4e4;
+  color: var(--dark-blue);
+  cursor: pointer;
+}

@@ -3,7 +3,7 @@ import './App.css';
 // import Example from "./components/Example";
 import {Routes, Route} from "react-router-dom";
 import {Dashboard} from "./components/Dashboard";
-import {Header} from "./components/Header";
+import {Header} from "./components/shared/Header";
 
 function App() {
   return (
