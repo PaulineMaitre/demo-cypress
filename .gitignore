@@ -5,3 +5,4 @@ api/domain/__pycache__/
 api/usecases/__pycache__/
 api/utils/__pycache__/
 bookshop-webapp/node_modules/
+cypress/node_modules/

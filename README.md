@@ -37,3 +37,16 @@ export FLASK_ENV=development
 cd api
 flask run
 ```
+
+## Cypress tests
+
+First launch: install cypress dependency from package.json
+```
+cd cypress
+npm install
+```
+
+Then run cypress tests:
+```
+npm run cypress:open
+```
