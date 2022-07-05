@@ -53,6 +53,7 @@ In `/api` folder:
 python3 -m venv <name_of_virtual_env>
 source <path_to_venv>/bin/activate
 pip install flask
+pip install -U flask-cors
 export FLASK_APP=main
 export FLASK_ENV=development
 ```

@@ -1,8 +1,12 @@
 import React, {useState} from "react";
 import Modal from "./shared/Modal";
+import {Book} from "../domain/Book";
+import {createBook} from "../service/BookService";
+import {toast} from "react-toastify";
 
 interface Props {
     onChange: (query: string) => void;
+    onCreate: () => void;
 }
 
 export const Search: React.FC<Props> = (props: Props) => {
@@ -13,7 +17,16 @@ export const Search: React.FC<Props> = (props: Props) => {
         props.onChange(e.target.value)
     }
 
-    console.log("showCreateBookModal", showCreateBookModal)
+    const addBook = (book: Book): void => {
+        createBook(book).then((res): void => {
+            console.log('res', res)
+            if (res instanceof Error) {
+                toast("Erreur lors de la création du livre", { autoClose: 5000 })
+            }
+            props.onCreate()
+            }
+        )
+    }
 
     return (
         <div className="bg-teal-50 mx-auto rounded-md shadow-sm p-6 mb-6">
@@ -35,8 +48,10 @@ export const Search: React.FC<Props> = (props: Props) => {
             </button>
             {showCreateBookModal && (
                 <Modal
+                    id="create-book-modal"
                     onClose={(): void => setShowCreateBookModal(false)}
                     title={"Nouveau livre"}
+                    onSubmit={(newBook: Book): void => addBook(newBook)}
                 />
                 /*<div id="popup-modal"
                      className="overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 md:inset-0 h-modal md:h-full">

@@ -1,8 +1,4 @@
 {
-  "name": "cypress",
-  "version": "1.0.0",
-  "description": "",
-  "main": "cypress.config.js",
   "dependencies": {
     "cypress": "^10.0.3"
   },

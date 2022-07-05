@@ -9,3 +9,18 @@ body {
   height: 100vh;
   background-color: var(--dark-blue);
 }
+
+.close-button::before {
+  content: "\2715";
+}
+
+.close-button {
+  position: absolute;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.close-button:hover {
+  font-weight: 600;
+  font-size: 20px;
+}

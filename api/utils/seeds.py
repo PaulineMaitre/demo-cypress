@@ -6,4 +6,5 @@ b2 = Book("2", "Ne le dis à personne", "Harlan Coben", "01-01-2010", 1)
 b3 = Book("3", "Dans les bois", "Harlan Coben", "01-01-2010", 5)
 b4 = Book("4", "Balle de match", "Harlan Coben", "01-01-2010", 3)
 b5 = Book("5", "Disparu à jamais", "Harlan Coben", "01-01-2010", 3)
-default_books=[b1, b2, b3, b4, b5]
+b6 = Book("6", "Promets moi", "Harlan Coben", "01-01-2010", 3)
+default_books: [Book] = [b1, b2, b3, b4, b5, b6]
