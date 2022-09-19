@@ -13,10 +13,10 @@ export async function createBook(book: Book): Promise<any | Error> {
     return post(`/books`, book);
 }
 
-export async function updateBook(book: Book): Promise<any | Error> {
-    return send(`/books/${book.id}`, "PUT", book);
+export async function updateBook(id: string, book: Book): Promise<any | Error> {
+    return send(`/books/${id}`, "PUT", book);
 }
 
 export async function deleteBook(id: string): Promise<any | Error> {
-    return send(`/books/delete/${id}`, "DELETE");
+    return send(`/books/${id}`, "DELETE");
 }
