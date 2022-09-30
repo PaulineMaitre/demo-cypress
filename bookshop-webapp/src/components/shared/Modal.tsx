@@ -1,6 +1,5 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Book} from "../../domain/Book";
-import { v4 as uuidv4 } from 'uuid';
 
 const Modal: any = ({
   onClose,
@@ -8,23 +7,36 @@ const Modal: any = ({
   onSubmit = (book: Book) => book
 }: any) => {
 
-  const [title, setTitle] = useState<string>("")
-  const [author, setAuthor] = useState<string>("")
-  const [publishDate, setPublishDate] = useState<string>("")
+  const [title, setTitle] = useState<string>()
+  const [author, setAuthor] = useState<string>()
+  const [publishDate, setPublishDate] = useState<number>()
   const [quantity, setQuantity] = useState<number>(0)
 
+  const [valid, setValid] = useState<boolean>(false)
+
   const handleSubmit = (): void => {
-    const book : Book = {
-      id: uuidv4(),
-      title: title,
-      author: author,
-      publish_date: publishDate,
-      quantity: quantity
+    if (valid) {
+      const book: Book = {
+        id: 0,
+        title: title || '',
+        codeName: '',
+        author: author || '',
+        publishDate: publishDate || 2022,
+        quantity: quantity
+      }
+      // console.log('book', book)
+      onSubmit(book)
+      onClose()
     }
-    // console.log('book', book)
-    onSubmit(book)
-    onClose()
   }
+
+  useEffect((): void => {
+    if (title && title !== '' && author && author !== '' && publishDate && quantity && quantity !== 0) {
+      setValid(true)
+    } else {
+      setValid(false)
+    }
+  }, [title, author, publishDate, quantity])
 
   return (
     <div id={id} className="fixed z-50 top-0 right-0 left-0 h-full">
@@ -49,21 +61,34 @@ const Modal: any = ({
                  required={true}
           />
           <label>Année de publication</label>
-          <input type="text" name="publish-date" id="book-publish-date"
+          <input type="number" name="publish-date" id="book-publish-date"
                  value={publishDate}
-                 onChange={(e): void => setPublishDate(e.target.value)}
+                 onChange={(e): void => {
+                   if (e.target.value) {
+                     setPublishDate(parseInt(e.target.value))
+                   } else {
+                     setPublishDate(0)
+                   }
+                 }}
                  className="border rounded-lg focus:border-blue-500 w-full p-2 bg-gray-600 border-gray-500 placeholder-gray-400 mt-2 mb-2"
                  required={true}
           />
           <label>Quantité en stock</label>
           <input type="number" name="quantity" id="book-quantity"
                  value={quantity}
-                 onChange={(e): void => setQuantity(parseInt(e.target.value))}
+                 onChange={(e): void => {
+                   if (e.target.value) {
+                     setQuantity(parseInt(e.target.value))
+                   } else {
+                     setQuantity(0)
+                   }
+                 }}
                  className="border rounded-lg focus:border-blue-500 w-full p-2 bg-gray-600 border-gray-500 placeholder-gray-400 mt-2 mb-2"
                  required={true}
           />
           <button id="submit-btn" type="submit"
-                  className="bg-teal-200 h-[40px] rounded-md text-black w-full mt-4"
+                  className="bg-teal-200 h-[40px] rounded-md text-black w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={!valid}
           >Valider</button>
         </form>
       </div>

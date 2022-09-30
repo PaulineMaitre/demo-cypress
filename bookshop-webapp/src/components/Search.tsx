@@ -19,7 +19,6 @@ export const Search: React.FC<Props> = (props: Props) => {
 
     const addBook = (book: Book): void => {
         createBook(book).then((res): void => {
-            console.log('res', res)
             if (res instanceof Error) {
                 toast("Erreur lors de la création du livre", { autoClose: 5000 })
             }

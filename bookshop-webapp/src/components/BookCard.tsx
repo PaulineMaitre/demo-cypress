@@ -1,15 +1,17 @@
 import React from "react";
 import {Book} from "../domain/Book";
+import {useNavigate} from "react-router-dom";
 
 interface Props {
     book: Book;
 }
 
 export const BookCard: React.FC<Props> = (props: Props) => {
+    const navigate = useNavigate();
     const book = props.book
 
     return (
-        <div key={book.id} id="book-card" className="bg-teal-50 rounded-md p-3 shadow-sm cursor-pointer">
+        <div key={book.id} id="book-card" className="bg-teal-50 rounded-md p-3 shadow-sm cursor-pointer" onClick={() : void => navigate(`/books/${book.id}/view`)}>
             <div className="flex flex-row">
                 <img className="w-24 h-24 rounded-full mr-auto"
                      src={require(`../assets/book.png`)}
