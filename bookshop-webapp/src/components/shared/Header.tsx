@@ -8,6 +8,7 @@ export const Header: React.FC = () => {
     return (
         <div id="top" className="bg-teal-200 shadow-sm p-3">
             <img
+                id="app-logo-header"
                 alt="app-logo"
                 className="rounded-full w-[50px] h-[50px] inline cursor-pointer mr-5"
                 src={appIcon}

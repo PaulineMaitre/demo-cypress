@@ -104,7 +104,7 @@ export const EditBook: React.FC = () => {
                            required={true}
                     />
                     <div className="flex justify-between">
-                        <button id="submit-edit-btn" type="submit"
+                        <button id="cancel-edit-btn" type="submit"
                                 className="bg-slate-300 h-[40px] rounded-md text-black w-[20%] mt-4"
                                 disabled={!valid}
                                 onClick={(): void => navigate(`/books/${id}/view`)}

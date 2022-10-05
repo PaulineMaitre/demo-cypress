@@ -19,12 +19,12 @@ def hello():
 @app.route('/books', methods=['GET'])
 def get_all_books():
     books = get_books()
-    return jsonify([book.to_json() for book in books])
+    return jsonify([book.to_json() for book in books]), 200
 
 
 @app.route('/books/<book_id>', methods=['GET'])
 def get_one_book(book_id):
-    return get_book(book_id).to_json()
+    return get_book(book_id).to_json(), 200
 
 
 @app.route('/books', methods=['POST'])
@@ -32,7 +32,7 @@ def create_book():
     data = request.get_json()
     book = from_json(data)
     save_book(book)
-    return jsonify({'answer': 200})
+    return jsonify({'message': 'book successfully created'}), 200
 
 
 @app.route('/books/<book_id>', methods=['PUT'])
@@ -40,10 +40,10 @@ def update(book_id):
     data = request.get_json()
     book = from_json(data)
     update_book(book_id, book)
-    return jsonify({'answer': 200})
+    return jsonify({'message': 'book successfully updated'}), 200
 
 
 @app.route('/books/<book_id>', methods=['DELETE'])
 def remove_book(book_id):
     delete_book(book_id)
-    return jsonify({'answer': 200})
+    return jsonify({'message': 'book successfully deleted'}), 200
