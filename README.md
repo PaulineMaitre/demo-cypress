@@ -8,7 +8,9 @@ ruche-cypress
 ├───README.md
 │
 ├───api
+│   ├───db
 │   ├───domain
+│   ├───repository
 │   ├───usecases
 │   ├───utils
 │   ├───venv(*)
