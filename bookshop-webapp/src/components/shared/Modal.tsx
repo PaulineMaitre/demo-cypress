@@ -41,11 +41,11 @@ const Modal: any = ({
   return (
     <div id={id} className="fixed z-50 top-0 right-0 left-0 h-full">
       <div className="text-white bg-slate-700 rounded-lg mx-auto w-[400px] relative p-5 mt-[30vh]">
-        <div className="relative"
+        <div id="close-modal-btn" className="relative h-px"
             onClick={onClose}
         > <span className="close-button text-gray-50 right-0 hover:bg-gray-800 rounded-lg p-1.5"/></div>
         <h1 className="font-medium text-lg mb-3">Ajouter un livre</h1>
-        <form className="text-sm" onSubmit={handleSubmit}>
+        <div className="text-sm">
           <label>Titre</label>
           <input type="text" name="title" id="book-title"
                  value={title}
@@ -89,8 +89,9 @@ const Modal: any = ({
           <button id="submit-btn" type="submit"
                   className="bg-teal-200 h-[40px] rounded-md text-black w-full mt-4 disabled:opacity-50 disabled:cursor-not-allowed"
                   disabled={!valid}
+                  onClick={handleSubmit}
           >Valider</button>
-        </form>
+        </div>
       </div>
     </div>
   );
