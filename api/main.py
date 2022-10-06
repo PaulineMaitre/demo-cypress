@@ -24,7 +24,11 @@ def get_all_books():
 
 @app.route('/books/<book_id>', methods=['GET'])
 def get_one_book(book_id):
-    return get_book(book_id).to_json(), 200
+    book = get_book(book_id)
+    if book is not None:
+        return book.to_json(), 200
+    else:
+        return jsonify({'error': 'book not found'}), 404
 
 
 @app.route('/books', methods=['POST'])
