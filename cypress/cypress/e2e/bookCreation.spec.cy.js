@@ -20,7 +20,7 @@ describe('book creation', () => {
     const lastName = faker.name.lastName()
     const publishDate = faker.random.numeric(4)
 
-    cy.visit('http://localhost:3000/');
+    cy.goHome();
     cy.get('#add-book-btn').click();
     cy.get('#book-author').type(`${firstName} ${lastName}`);
     cy.get('#book-publish-date').type(publishDate);
@@ -33,7 +33,7 @@ describe('book creation', () => {
     const title = `${faker.word.adverb()} ${faker.word.verb()}`
     const publishDate = faker.random.numeric(4)
 
-    cy.visit('http://localhost:3000/');
+    cy.goHome();
     cy.get('#add-book-btn').click();
     cy.get('#book-title').type(title);
     cy.get('#book-publish-date').type(publishDate);
@@ -47,7 +47,7 @@ describe('book creation', () => {
     const firstName = faker.name.firstName()
     const lastName = faker.name.lastName()
 
-    cy.visit('http://localhost:3000/');
+    cy.goHome();
     cy.get('#add-book-btn').click();
     cy.get('#book-title').type(title);
     cy.get('#book-author').type(`${firstName} ${lastName}`);
@@ -63,7 +63,7 @@ describe('book creation', () => {
     const lastName = faker.name.lastName()
     const publishDate = faker.random.numeric(4)
 
-    cy.visit('http://localhost:3000/');
+    cy.goHome();
     cy.get('#add-book-btn').click();
     cy.get('#book-title').type(title);
     cy.get('#book-author').type(`${firstName} ${lastName}`);
