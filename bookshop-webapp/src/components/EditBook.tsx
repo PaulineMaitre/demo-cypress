@@ -64,14 +64,18 @@ export const EditBook: React.FC = () => {
             <div className="bg-teal-50 mx-auto rounded-md shadow-sm p-8">
                 <div>
                     <label>Titre</label>
-                    <input type="text" name="title" id="book-title"
+                    <input type="text" name="title"
+                           id="book-title"
+                           data-testid="book-title"
                            value={title}
                            onChange={(e): void => setTitle(e.target.value)}
                            className="border rounded-lg focus:border-blue-500 w-full p-2 bg-teal-50 border-slate-800 placeholder-gray-400 mt-2 mb-2"
                            required={true}
                     />
                     <label>Auteur</label>
-                    <input type="text" name="author" id="book-author"
+                    <input type="text" name="author"
+                           id="book-author"
+                           data-testid="book-author"
                            value={author}
                            onChange={(e): void => setAuthor(e.target.value)}
                            className="border rounded-lg focus:border-blue-500 w-full p-2 bg-teal-50 border-slate-800 placeholder-gray-400 mt-2 mb-2"
@@ -91,7 +95,9 @@ export const EditBook: React.FC = () => {
                            required={true}
                     />
                     <label>Quantité en stock</label>
-                    <input type="number" name="quantity" id="book-quantity"
+                    <input type="number" name="quantity"
+                           id="book-quantity"
+                           data-testid="book-quantity"
                            value={quantity}
                            onChange={(e): void => {
                                if (e.target.value) {
@@ -104,17 +110,23 @@ export const EditBook: React.FC = () => {
                            required={true}
                     />
                     <div className="flex justify-between">
-                        <button id="cancel-edit-btn" type="submit"
-                                className="bg-slate-300 h-[40px] rounded-md text-black w-[20%] mt-4"
-                                disabled={!valid}
-                                onClick={(): void => navigate(`/books/${id}/view`)}
+                        <button
+                            id="cancel-edit-btn"
+                            data-testid="cancel-edit-btn"
+                            type="submit"
+                            className="bg-slate-300 h-[40px] rounded-md text-black w-[20%] mt-4"
+                            disabled={!valid}
+                            onClick={(): void => navigate(`/books/${id}/view`)}
                         >
                             Annuler
                         </button>
-                        <button id="submit-edit-btn" type="submit"
-                                className="bg-teal-200 h-[40px] rounded-md text-black w-[20%] mt-4 disabled:bg-teal-500 disabled:opacity-50 disabled:cursor-not-allowed"
-                                disabled={!valid}
-                                onClick={edit}
+                        <button
+                            id="submit-edit-btn"
+                            data-testid="submit-edit-btn"
+                            type="submit"
+                            className="bg-teal-200 h-[40px] rounded-md text-black w-[20%] mt-4 disabled:bg-teal-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                            disabled={!valid}
+                            onClick={edit}
                         >
                             Sauvegarder
                         </button>

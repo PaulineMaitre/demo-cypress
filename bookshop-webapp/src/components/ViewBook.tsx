@@ -44,21 +44,22 @@ export const ViewBook: React.FC = () => {
                     <div className="w-[60%] ml-[20%] flex flex-col justify-between">
                         {book ? (<>
                             <div>
-                                <div className="mt-4 mb-4" id="title-label"><span
+                                <div className="mt-4 mb-4" id="title-label" data-testid="title-label"><span
                                     className="font-semibold mr-4">Titre : </span>{book.title}
                                 </div>
-                                <div className="mb-4" id="author-label"><span
+                                <div className="mb-4" id="author-label" data-testid="author-label"><span
                                     className="font-semibold mr-4">Auteur :  </span>{book.author}
                                 </div>
-                                <div className="mb-4" id="publish-date-label"><span
+                                <div className="mb-4" id="publish-date-label" data-testid="publish-date-label"><span
                                     className="font-semibold mr-4">Année de publication : </span> {book.publishDate}
                                 </div>
-                                <div className="mb-4" id="quantity-label"><span
+                                <div className="mb-4" id="quantity-label" data-testid="quantity-label"><span
                                     className="font-semibold mr-4">Quantité en stock : </span> {book.quantity}</div>
                             </div>
                             <div className="flex justify-between">
                                 <button
                                     id="edit-book-btn"
+                                    data-testid="edit-book-btn"
                                     className="bg-teal-200 h-[50px] rounded-md px-4"
                                     onClick={(): void => navigate(`/books/${id}/edit`)}
                                 >
@@ -66,6 +67,7 @@ export const ViewBook: React.FC = () => {
                                 </button>
                                 <button
                                     id="delete-book-btn"
+                                    data-testid="delete-book-btn"
                                     className="bg-red-200 h-[50px] rounded-md px-4"
                                     onClick={remove}
                                 >

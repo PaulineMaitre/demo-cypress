@@ -18,7 +18,7 @@ export const Books: React.FC<Props> = (props: Props) => {
                     />
                 )
             }) : (
-                <div id="no-result-label" className="text-white">Aucun résultat pour cette recherche.</div>
+                <div id="no-result-label" data-testid="no-result-label" className="text-white">Aucun résultat pour cette recherche.</div>
             )}
         </div>
     );
