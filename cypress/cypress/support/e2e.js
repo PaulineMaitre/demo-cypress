@@ -16,5 +16,9 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+beforeEach(() => {
+    cy.exec('npm run init-db')
+})
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
