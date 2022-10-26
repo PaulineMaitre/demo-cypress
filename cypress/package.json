@@ -1,14 +1,23 @@
 {
   "dependencies": {
-    "cypress": "^10.0.3"
+    "cypress": "^10.0.3",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@faker-js/faker": "^7.5.0"
+    "@faker-js/faker": "^7.5.0",
+    "react": "^18.2.0",
+    "react-scripts": "^5.0.1",
+    "webpack": "^5.74.0"
   },
   "scripts": {
     "cypress:open": "cypress open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "author": "",
   "license": "ISC"
 }
