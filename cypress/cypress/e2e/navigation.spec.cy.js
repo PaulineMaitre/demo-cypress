@@ -7,19 +7,19 @@ describe('navigation between pages', () => {
   })
 
   it('go to book edition', () => {
-    cy.visit('http://localhost:3000/books/1/view');
+    cy.visit('/books/1/view');
     cy.get('[data-testid="edit-book-btn"]').click();
     cy.url().should('include', '/books/1/edit');
   })
 
   it('cancel book edition', () => {
-    cy.visit('http://localhost:3000/books/1/edit');
+    cy.visit('/books/1/edit');
     cy.get('#cancel-edit-btn').click();
     cy.url().should('include', '/books/1/view');
   })
 
   it('go back to home page', () => {
-    cy.visit('http://localhost:3000/books/1/view');
+    cy.visit('/books/1/view');
     cy.get('#app-logo-header').click();
     cy.url().should('eq', 'http://localhost:3000/')
   })
