@@ -2,9 +2,6 @@
 
 cd ../api
 
-source venv/bin/activate
-export FLASK_APP=main
-export FLASK_ENV=development
-flask run
+source <path-to-virtualenv>/bin/activate
 
 python3 ./db/init_db.py
