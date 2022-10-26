@@ -114,7 +114,7 @@ export const EditBook: React.FC = () => {
                             id="cancel-edit-btn"
                             data-testid="cancel-edit-btn"
                             type="submit"
-                            className="bg-slate-300 h-[40px] rounded-md text-black w-[20%] mt-4"
+                            className="bg-slate-300 h-[40px] rounded-md text-black w-[25%] mt-4"
                             disabled={!valid}
                             onClick={(): void => navigate(`/books/${id}/view`)}
                         >
@@ -124,7 +124,7 @@ export const EditBook: React.FC = () => {
                             id="submit-edit-btn"
                             data-testid="submit-edit-btn"
                             type="submit"
-                            className="bg-teal-200 h-[40px] rounded-md text-black w-[20%] mt-4 disabled:bg-teal-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="bg-teal-200 h-[40px] rounded-md text-black w-[25%] mt-4 disabled:bg-teal-500 disabled:opacity-50 disabled:cursor-not-allowed"
                             disabled={!valid}
                             onClick={edit}
                         >
