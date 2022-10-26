@@ -110,6 +110,24 @@ def create_demo_recipes(cursor):
                        14,
                        2008
                    ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       "Weighed in the balance",
+                       'weighed_in_the_balance',
+                       'Anne Perry',
+                       14,
+                       1996
+                   ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       "Jamais deux sans trois",
+                       'jamais_deux_sans_trois',
+                       'M.C. Beaton',
+                       14,
+                       1996
+                   ))
 
 
 connexion = get_db_connexion()
