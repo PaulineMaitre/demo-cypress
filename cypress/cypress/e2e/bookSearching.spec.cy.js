@@ -6,7 +6,7 @@ describe('book searching', () => {
     it('searching book by title', () => {
         //get list of all books present
         //Best practice
-        cy.get('[data-cy="book-card"]').should('have.length', 5)
+        cy.get('[data-cy="book-card"]').should('have.length', 12)
         //also possible
         cy.get('*[id^="book-card-"]').should('not.have.length', 1)
 

@@ -2,7 +2,7 @@
 
 cd ../api
 
-source <path-to-virtualenv>/bin/activate
+source venv/bin/activate
 export FLASK_APP=main
 export FLASK_ENV=development
 flask run
