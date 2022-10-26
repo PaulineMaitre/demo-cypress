@@ -38,6 +38,96 @@ def create_demo_recipes(cursor):
                        3,
                        2006
                    ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       'Promets moi',
+                       'promets_moi',
+                       'Harlan Coben',
+                       25,
+                       2010
+                   ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       'Six ans déjà',
+                       'six_ans_deja',
+                       'Harlan Coben',
+                       3,
+                       2010
+                   ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       'Peur noire',
+                       'peur_noire',
+                       'Harlan Coben',
+                       3,
+                       2003
+                   ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       'Disparu à jamais',
+                       'disparu_a_jamais',
+                       'Harlan Coben',
+                       14,
+                       2005
+                   ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       'Mauvaise base',
+                       'mauvaise_base',
+                       'Harlan Coben',
+                       1,
+                       2008
+                   ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       "Ne t'enfuis plus",
+                       'ne_t_enfuis_plus',
+                       'Harlan Coben',
+                       14,
+                       2006
+                   ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       "Ne t'éloigne pas",
+                       'ne_t_enloigne_pas',
+                       'Harlan Coben',
+                       14,
+                       2012
+                   ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       "Sans un mot",
+                       'sans_un_mot',
+                       'Harlan Coben',
+                       14,
+                       2008
+                   ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       "Weighed in the balance",
+                       'weighed_in_the_balance',
+                       'Anne Perry',
+                       14,
+                       1996
+                   ))
+    cursor.execute('INSERT INTO books (title, code_name, author, quantity, publish_date)'
+                   'VALUES (%s, %s, %s, %s, %s)',
+                   (
+                       "Jamais deux sans trois",
+                       'jamais_deux_sans_trois',
+                       'M.C. Beaton',
+                       14,
+                       1996
+                   ))
 
 
 connexion = get_db_connexion()

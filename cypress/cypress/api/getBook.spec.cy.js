@@ -8,7 +8,7 @@ describe('get books', () => {
     })
         .should((response) => {
           expect(response.status).to.eq(200)
-          expect(response.body.title).to.be.eq('Innocent');
+          expect(response.body.title).to.be.eq('Juste un regard');
         });
   })
 })

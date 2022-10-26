@@ -1,13 +1,13 @@
 
 describe('book edition', () => {
   it('edit redirects to view', () => {
-    cy.visit('http://localhost:3000/books/1/edit');
+    cy.visit('/books/1/edit');
     cy.get('#submit-edit-btn').click();
     cy.url().should('include', '/books/1/view');
   })
 
   it('edit book fields', () => {
-    cy.visit('http://localhost:3000/books/1/edit');
+    cy.visit('/books/1/edit');
     // edit title
     cy.get('#book-title').type('{selectall}{backspace}');
     cy.get('#book-title').type('Edited book name');
@@ -28,7 +28,7 @@ describe('book edition', () => {
   })
 
   it('reset book fields', () => {
-    cy.visit('http://localhost:3000/books/1/edit');
+    cy.visit('/books/1/edit');
     // edit title
     cy.get('#book-title').type('{selectall}{backspace}');
     cy.get('#book-title').type('Innocent');
