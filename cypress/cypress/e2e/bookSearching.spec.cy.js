@@ -1,6 +1,17 @@
 describe('book searching', () => {
     beforeEach(() => {
-        cy.visit('http://localhost:3000/');
+        cy.goHome()
+    })
+
+    it('searching book by author', () => {
+        //get list of all books present
+        cy.get('*[id^="book-card-"]').should('not.have.length', 0)
+        //type in searchbar
+        cy.get('#search-book-input').type(`Harlan Coben`);
+        //should
+        cy.get('*[id^="book-card-"]').should('not.have.length', 0).each(($book) => {
+            cy.wrap($book).contains("Harlan Coben")
+        })
     })
 
     it('searching book by title', () => {
