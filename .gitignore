@@ -1,5 +1,6 @@
 /.idea/
 api/venv/
+api/.env
 **/__pycache__
 bookshop-webapp/node_modules/
 cypress/node_modules/

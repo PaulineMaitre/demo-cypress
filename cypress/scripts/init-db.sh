@@ -2,6 +2,6 @@
 
 cd ../api
 
-source <path-to-virtualenv>/bin/activate
+source venv/bin/activate
 
 python3 ./db/init_db.py
